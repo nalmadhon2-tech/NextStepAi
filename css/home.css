@@ -78,6 +78,9 @@ section.hero{
   inset:0;
   z-index:-2;
 }
+.hero-bg img{
+  transform:scaleX(-1); /* يعكس اتجاه الصورة فقط — بدون أي تأثير على النص */
+}
 .hero-bg svg{width:100%;height:100%;display:block;}
 section.hero::before{
   content:"";
