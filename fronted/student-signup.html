@@ -53,33 +53,40 @@
       <div class="brand-text">NextStep <span>AI</span></div>
     </div>
 
-    <div class="auth-badge">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5"/></svg>
-      حساب طالب
-    </div>
+   
 
     <h1 class="auth-title">أنشئ حسابك</h1>
     <p class="auth-subtitle">انضم كطالب واكتشف مسارك الجامعي المناسب</p>
 
-    <form>
+    <form id="signupForm">
       <div class="form-group">
         <label for="full_name">الاسم الكامل</label>
-        <input type="text" class="form-control" id="full_name" name="full_name" placeholder="اسمك الكامل">
+        <input type="text" class="form-control" id="full_name" name="full_name" placeholder="اسمك الكامل" required>
       </div>
 
       <div class="form-group">
         <label for="email">البريد الإلكتروني</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="example@email.com">
+        <input type="email" class="form-control" id="email" name="email" placeholder="example@email.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">رقم الهاتف</label>
+        <input type="tel" class="form-control" id="phone" name="phone" placeholder="05xxxxxxxx" required>
       </div>
 
       <div class="form-group">
         <label for="password">كلمة المرور</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="كلمة المرور">
+        <input type="password" class="form-control" id="password" name="password" placeholder="كلمة المرور" required>
+      </div>
+
+      <div class="form-group">
+        <label for="birthdate">تاريخ الميلاد</label>
+        <input type="date" class="form-control" id="birthdate" name="birthdate" required>
       </div>
 
       <div class="form-group">
         <label for="city_id">المدينة</label>
-        <select class="form-control" id="city_id" name="city_id">
+        <select class="form-control" id="city_id" name="city_id" required>
           <option value="">-- اختر المدينة --</option>
           <option value="1">نابلس</option>
           <option value="2">رام الله</option>
@@ -92,6 +99,39 @@
       <div class="form-group">
         <label for="school">المدرسة الثانوية <span class="optional">(اختياري)</span></label>
         <input type="text" class="form-control" id="school" name="school" placeholder="اسم مدرستك الثانوية">
+      </div>
+
+      <!-- فرع الثانوية العامة — القيم لاحقاً هتنجلب من قاعدة البيانات عبر API -->
+      <div class="form-group">
+        <label for="highschool_branch_id">فرع الثانوية العامة</label>
+        <select class="form-control" id="highschool_branch_id" name="highschool_branch_id" required>
+          <option value="">-- اختر الفرع --</option>
+          <option value="1">علمي</option>
+          <option value="2">أدبي</option>
+          <option value="3">تجاري</option>
+          <option value="4">صناعي</option>
+          <option value="5">شرعي</option>
+        </select>
+      </div>
+
+      <!-- معدل الثانوية — لازم يضل تحت حقل الفرع مباشرة -->
+      <div class="form-group">
+        <label for="highschool_gpa">معدل الثانوية العامة</label>
+        <input type="number" class="form-control" id="highschool_gpa" name="highschool_gpa" placeholder="مثال: 88.5" min="0" max="100" step="0.1" required>
+      </div>
+
+      <!-- الميول الأكاديمي (العمادة) — القيم لاحقاً هتنجلب من قاعدة البيانات عبر API -->
+      <div class="form-group">
+        <label for="interest_id">الميول الأكاديمي</label>
+        <select class="form-control" id="interest_id" name="interest_id" required>
+          <option value="">-- اختر الميول --</option>
+          <option value="1">عمادة الهندسة وتكنولوجيا المعلومات</option>
+          <option value="2">عمادة الآداب</option>
+          <option value="3">عمادة العلوم</option>
+          <option value="4">عمادة الاقتصاد والعلوم الإدارية</option>
+          <option value="5">عمادة الطب والعلوم الصحية</option>
+          <option value="6">عمادة الشريعة والقانون</option>
+        </select>
       </div>
 
       <div class="form-group">
@@ -108,6 +148,42 @@
     <p class="auth-footer-text">لديك حساب بالفعل؟ <a href="login.html">تسجيل الدخول</a></p>
   </div>
 </div>
+
+<script>
+  const typeBtns = document.querySelectorAll('.type-btn');
+  const studentTypeInput = document.getElementById('student_type');
+  const highschoolFields = document.querySelector('.conditional-fields[data-show-for="highschool"]');
+  const universityFields = document.querySelector('.conditional-fields[data-show-for="university"]');
+
+  function setRequiredWithin(container, isRequired){
+    container.querySelectorAll('input, select').forEach(field => {
+      // لا نلمس الحقول المعلّمة اختياري بالأساس (زي المدرسة الثانوية)
+      if (field.id === 'school') return;
+      field.required = isRequired;
+    });
+  }
+
+  typeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      typeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const type = btn.dataset.type;
+      studentTypeInput.value = type;
+
+      if (type === 'highschool'){
+        highschoolFields.style.display = 'block';
+        universityFields.style.display = 'none';
+        setRequiredWithin(highschoolFields, true);
+        setRequiredWithin(universityFields, false);
+      } else {
+        highschoolFields.style.display = 'none';
+        universityFields.style.display = 'block';
+        setRequiredWithin(highschoolFields, false);
+        setRequiredWithin(universityFields, true);
+      }
+    });
+  });
+</script>
 
 <!-- ======================= FOOTER ======================= -->
 <footer class="site-footer">
