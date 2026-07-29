@@ -202,6 +202,63 @@ select.form-control{
   padding-left:36px;
 }
 
+/* ---- Track toggle (طالب جديد / طالب جامعي) ---- */
+.type-toggle{
+  display:flex;
+  gap:8px;
+  background:var(--light);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:5px;
+}
+.type-btn{
+  flex:1;
+  padding:10px 12px;
+  border-radius:9px;
+  border:none;
+  background:transparent;
+  font-family:'Cairo',sans-serif;
+  font-size:13px;
+  font-weight:700;
+  color:var(--gray);
+  cursor:pointer;
+  transition:all .2s ease;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+.type-btn svg{width:15px;height:15px;flex-shrink:0;}
+.type-btn.active{
+  background:#fff;
+  color:var(--blue);
+  box-shadow:0 3px 10px rgba(23,59,115,0.1);
+}
+
+/* ---- 2-column field grid ---- */
+.form-row-2{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+}
+@media (max-width:480px){
+  .form-row-2{grid-template-columns:1fr;}
+}
+
+/* ---- Icon inside field ---- */
+.input-icon-wrap{position:relative;}
+.input-icon-wrap .form-control{padding-left:38px;}
+.input-icon-wrap .field-icon{
+  position:absolute;
+  left:12px;
+  top:50%;
+  transform:translateY(-50%);
+  width:17px;height:17px;
+  color:#AAB4C2;
+  pointer-events:none;
+}
+.input-icon-wrap select.form-control{padding-right:14px;}
+
 .btn-submit{
   width:100%;
   padding:13px;

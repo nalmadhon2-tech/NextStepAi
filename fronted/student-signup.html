@@ -53,40 +53,156 @@
       <div class="brand-text">NextStep <span>AI</span></div>
     </div>
 
-   
+    <div class="auth-badge">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5"/></svg>
+      حساب طالب
+    </div>
 
     <h1 class="auth-title">أنشئ حسابك</h1>
-    <p class="auth-subtitle">انضم كطالب واكتشف مسارك الجامعي المناسب</p>
+    <p class="auth-subtitle" id="trackGoal">اختر مسارك، واكتشف مسارك الجامعي أو المهني المناسب</p>
 
     <form id="signupForm">
+
+      <!-- اختيار المسار -->
+      <div class="form-group">
+        <label>اختر مسارك</label>
+        <div class="type-toggle">
+          <button type="button" class="type-btn active" data-track="new_student">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5-10-5z"/><path d="M6 12v5c0 1.5 2.5 3 6 3s6-1.5 6-3v-5"/></svg>
+            طالب جديد
+          </button>
+          <button type="button" class="type-btn" data-track="university_student">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V7l7-4 7 4v14M9 9h1M14 9h1M9 13h1M14 13h1M9 17h1M14 17h1"/></svg>
+            طالب جامعي
+          </button>
+        </div>
+        <input type="hidden" id="track" name="track" value="new_student">
+      </div>
+
       <div class="form-group">
         <label for="full_name">الاسم الكامل</label>
-        <input type="text" class="form-control" id="full_name" name="full_name" placeholder="اسمك الكامل" required>
+        <div class="input-icon-wrap">
+          <input type="text" class="form-control" id="full_name" name="full_name" placeholder="أدخل اسمك الكامل" required>
+          <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
+        </div>
       </div>
 
-      <div class="form-group">
-        <label for="email">البريد الإلكتروني</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="example@email.com" required>
-      </div>
-
-      <div class="form-group">
-        <label for="phone">رقم الهاتف</label>
-        <input type="tel" class="form-control" id="phone" name="phone" placeholder="05xxxxxxxx" required>
+      <div class="form-row-2">
+        <div class="form-group">
+          <label for="email">البريد الإلكتروني</label>
+          <div class="input-icon-wrap">
+            <input type="email" class="form-control" id="email" name="email" placeholder="example@email.com" required>
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="phone">رقم الهاتف</label>
+          <div class="input-icon-wrap">
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="05xxxxxxxx" required>
+            <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.77.62 2.6a2 2 0 0 1-.45 2.11L8.09 9.62a16 16 0 0 0 6 6l1.19-1.19a2 2 0 0 1 2.11-.45c.83.29 1.7.5 2.6.62A2 2 0 0 1 22 16.92z"/></svg>
+          </div>
+        </div>
       </div>
 
       <div class="form-group">
         <label for="password">كلمة المرور</label>
-        <input type="password" class="form-control" id="password" name="password" placeholder="كلمة المرور" required>
+        <div class="input-icon-wrap">
+          <input type="password" class="form-control" id="password" name="password" placeholder="كلمة المرور" required>
+          <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        </div>
+      </div>
+
+      <!-- ======================= المسار الأول: طالب جديد (توجيه لأول مرة) ======================= -->
+      <div class="conditional-fields" data-show-for="new_student">
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="age">العمر</label>
+            <div class="input-icon-wrap">
+              <input type="number" class="form-control" id="age" name="age" placeholder="20" min="14" max="60" required>
+              <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="highschool_gpa">المعدل</label>
+            <div class="input-icon-wrap">
+              <input type="number" class="form-control" id="highschool_gpa" name="highschool_gpa" placeholder="95.0" min="0" max="100" step="0.1" required>
+              <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.9 6.3L22 9l-5 5 1.2 7L12 17.8 5.8 21 7 14 2 9l7.1-.7z"/></svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- الفرع الدراسي — القيم لاحقاً هتنجلب من قاعدة البيانات عبر API -->
+        <div class="form-group">
+          <label for="highschool_branch_id">الفرع الدراسي</label>
+          <select class="form-control" id="highschool_branch_id" name="highschool_branch_id" required>
+            <option value="">-- اختر الفرع --</option>
+            <option value="1">علمي</option>
+            <option value="2">أدبي</option>
+            <option value="3">تجاري</option>
+            <option value="4">صناعي</option>
+            <option value="5">شرعي</option>
+          </select>
+        </div>
+
+      </div>
+
+      <!-- ======================= المسار الثاني: طالب جامعي (إرشاد ومتابعة) ======================= -->
+      <div class="conditional-fields" data-show-for="university_student" style="display:none;">
+
+        <div class="form-row-2">
+          <!-- الجامعة الحالية — القيم لاحقاً هتنجلب من قاعدة البيانات عبر API -->
+          <div class="form-group">
+            <label for="current_university_id">الجامعة الحالية</label>
+            <select class="form-control" id="current_university_id" name="current_university_id">
+              <option value="">-- اختر الجامعة --</option>
+              <option value="1">جامعة النجاح الوطنية</option>
+              <option value="2">الجامعة الإسلامية</option>
+              <option value="3">جامعة الأزهر</option>
+              <option value="4">جامعة بيرزيت</option>
+              <option value="5">جامعة بوليتكنك فلسطين</option>
+            </select>
+          </div>
+          <!-- التخصص الحالي — القيم لاحقاً هتنجلب من قاعدة البيانات عبر API -->
+          <div class="form-group">
+            <label for="current_major_id">التخصص الحالي</label>
+            <select class="form-control" id="current_major_id" name="current_major_id">
+              <option value="">-- اختر التخصص --</option>
+              <option value="1">علوم الحاسوب</option>
+              <option value="2">هندسة البرمجيات</option>
+              <option value="3">إدارة الأعمال</option>
+              <option value="4">الطب البشري</option>
+              <option value="5">القانون</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row-2">
+          <div class="form-group">
+            <label for="academic_level">السنة الدراسية / المستوى</label>
+            <select class="form-control" id="academic_level" name="academic_level">
+              <option value="">-- اختر المستوى --</option>
+              <option value="1">السنة الأولى</option>
+              <option value="2">السنة الثانية</option>
+              <option value="3">السنة الثالثة</option>
+              <option value="4">السنة الرابعة</option>
+              <option value="5">السنة الخامسة فأكثر</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cumulative_gpa">المعدل التراكمي <span class="optional">(اختياري)</span></label>
+            <div class="input-icon-wrap">
+              <input type="number" class="form-control" id="cumulative_gpa" name="cumulative_gpa" placeholder="3.2" min="0" max="4" step="0.01">
+              <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.9 6.3L22 9l-5 5 1.2 7L12 17.8 5.8 21 7 14 2 9l7.1-.7z"/></svg>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <div class="form-group">
-        <label for="birthdate">تاريخ الميلاد</label>
-        <input type="date" class="form-control" id="birthdate" name="birthdate" required>
-      </div>
-
-      <div class="form-group">
-        <label for="city_id">المدينة</label>
-        <select class="form-control" id="city_id" name="city_id" required>
+        <label for="city_id">المدينة <span class="optional">(اختياري)</span></label>
+        <select class="form-control" id="city_id" name="city_id">
           <option value="">-- اختر المدينة --</option>
           <option value="1">نابلس</option>
           <option value="2">رام الله</option>
@@ -94,49 +210,6 @@
           <option value="4">جنين</option>
           <option value="5">بيت لحم</option>
         </select>
-      </div>
-
-      <div class="form-group">
-        <label for="school">المدرسة الثانوية <span class="optional">(اختياري)</span></label>
-        <input type="text" class="form-control" id="school" name="school" placeholder="اسم مدرستك الثانوية">
-      </div>
-
-      <!-- فرع الثانوية العامة — القيم لاحقاً هتنجلب من قاعدة البيانات عبر API -->
-      <div class="form-group">
-        <label for="highschool_branch_id">فرع الثانوية العامة</label>
-        <select class="form-control" id="highschool_branch_id" name="highschool_branch_id" required>
-          <option value="">-- اختر الفرع --</option>
-          <option value="1">علمي</option>
-          <option value="2">أدبي</option>
-          <option value="3">تجاري</option>
-          <option value="4">صناعي</option>
-          <option value="5">شرعي</option>
-        </select>
-      </div>
-
-      <!-- معدل الثانوية — لازم يضل تحت حقل الفرع مباشرة -->
-      <div class="form-group">
-        <label for="highschool_gpa">معدل الثانوية العامة</label>
-        <input type="number" class="form-control" id="highschool_gpa" name="highschool_gpa" placeholder="مثال: 88.5" min="0" max="100" step="0.1" required>
-      </div>
-
-      <!-- الميول الأكاديمي (العمادة) — القيم لاحقاً هتنجلب من قاعدة البيانات عبر API -->
-      <div class="form-group">
-        <label for="interest_id">الميول الأكاديمي</label>
-        <select class="form-control" id="interest_id" name="interest_id" required>
-          <option value="">-- اختر الميول --</option>
-          <option value="1">عمادة الهندسة وتكنولوجيا المعلومات</option>
-          <option value="2">عمادة الآداب</option>
-          <option value="3">عمادة العلوم</option>
-          <option value="4">عمادة الاقتصاد والعلوم الإدارية</option>
-          <option value="5">عمادة الطب والعلوم الصحية</option>
-          <option value="6">عمادة الشريعة والقانون</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="bio">نبذة عنك <span class="optional">(اختياري)</span></label>
-        <textarea class="form-control" id="bio" name="bio" placeholder="أخبرنا عن اهتماماتك وأهدافك"></textarea>
       </div>
 
       <button type="submit" class="btn-submit">
@@ -150,35 +223,42 @@
 </div>
 
 <script>
-  const typeBtns = document.querySelectorAll('.type-btn');
-  const studentTypeInput = document.getElementById('student_type');
-  const highschoolFields = document.querySelector('.conditional-fields[data-show-for="highschool"]');
-  const universityFields = document.querySelector('.conditional-fields[data-show-for="university"]');
+  const trackBtns = document.querySelectorAll('.type-btn');
+  const trackInput = document.getElementById('track');
+  const trackGoalText = document.getElementById('trackGoal');
+  const newStudentFields = document.querySelector('.conditional-fields[data-show-for="new_student"]');
+  const universityFields = document.querySelector('.conditional-fields[data-show-for="university_student"]');
+
+  const goals = {
+    new_student: 'الهدف: اختيار تخصص وجامعة مناسبة',
+    university_student: 'الهدف: تطوير المسار الأكاديمي والمهني أثناء الدراسة'
+  };
 
   function setRequiredWithin(container, isRequired){
     container.querySelectorAll('input, select').forEach(field => {
-      // لا نلمس الحقول المعلّمة اختياري بالأساس (زي المدرسة الثانوية)
-      if (field.id === 'school') return;
+      // المعدل التراكمي بمسار الطالب الجامعي اختياري دايماً، حتى لما القسم يكون ظاهر
+      if (field.id === 'cumulative_gpa') return;
       field.required = isRequired;
     });
   }
 
-  typeBtns.forEach(btn => {
+  trackBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      typeBtns.forEach(b => b.classList.remove('active'));
+      trackBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      const type = btn.dataset.type;
-      studentTypeInput.value = type;
+      const track = btn.dataset.track;
+      trackInput.value = track;
+      trackGoalText.textContent = goals[track];
 
-      if (type === 'highschool'){
-        highschoolFields.style.display = 'block';
+      if (track === 'new_student'){
+        newStudentFields.style.display = 'block';
         universityFields.style.display = 'none';
-        setRequiredWithin(highschoolFields, true);
+        setRequiredWithin(newStudentFields, true);
         setRequiredWithin(universityFields, false);
       } else {
-        highschoolFields.style.display = 'none';
+        newStudentFields.style.display = 'none';
         universityFields.style.display = 'block';
-        setRequiredWithin(highschoolFields, false);
+        setRequiredWithin(newStudentFields, false);
         setRequiredWithin(universityFields, true);
       }
     });
