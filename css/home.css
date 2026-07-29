@@ -18,20 +18,20 @@ header.site-header{
   align-items:center;
   justify-content:space-between;
 }
-.brand-mark{display:flex;align-items:center;gap:10px;}
-.brand-mark .brand-logo{width:34px;height:34px;object-fit:contain;flex-shrink:0;}
+.brand-mark{display:flex;align-items:center;gap:10px;padding-left: 4px;}
+.brand-mark .brand-logo{width:82px;height:82px;object-fit:contain;flex-shrink:0;}
 .brand-mark .brand-text{
   font-family:'Poppins',sans-serif;
   font-weight:700;
-  font-size:17px;
+  font-size:40px;
   color:var(--navy);
 }
-.brand-mark .brand-text span{color:var(--mint);}
+.brand-mark .brand-text span{color:var(--cyan);}
 nav.main-nav ul{
   display:flex;
-  gap:28px;
-  font-size:14px;
-  font-weight:600;
+  gap:60px;
+  font-size:16px;
+  font-weight:700;
   color:var(--dark);
 }
 nav.main-nav a{transition:color .2s ease;}
@@ -43,7 +43,7 @@ nav.main-nav a:hover{color:var(--blue);}
   border-radius:10px;
   border:1px solid var(--border);
   font-weight:700;
-  font-size:13.5px;
+  font-size:16px;
   color:var(--navy);
   transition:border-color .2s ease;
 }
@@ -54,7 +54,7 @@ nav.main-nav a:hover{color:var(--blue);}
   background:var(--blue);
   color:#fff;
   font-weight:700;
-  font-size:13.5px;
+  font-size:16px;
   display:inline-flex;
   align-items:center;
   gap:6px;
