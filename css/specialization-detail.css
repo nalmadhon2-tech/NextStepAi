@@ -1,0 +1,143 @@
+/* =====================================================================
+   specialization-detail.css
+   صفحة "تفاصيل التخصص" - بنفس هوية university-specializations.css
+   حمّل app.css ثم هاد الملف
+   ===================================================================== */
+
+:root{
+  --radius:18px;
+  --shadow:0 10px 26px -16px rgba(23,59,115,.35);
+}
+
+/* ---------- هيدر التخصص ---------- */
+.spec-hero{
+  background:linear-gradient(135deg,var(--navy),var(--blue) 85%);
+  color:#fff;
+  padding:44px 24px 40px;
+  position:relative;
+  overflow:hidden;
+}
+.spec-hero::after{
+  content:"";
+  position:absolute;inset:0;
+  background:radial-gradient(circle at 88% 15%, rgba(53,208,255,.35), transparent 50%);
+}
+.spec-hero__crumb{
+  position:relative;
+  font-size:.85rem;
+  opacity:.85;
+  display:flex;gap:6px;align-items:center;flex-wrap:wrap;
+  margin-bottom:18px;
+}
+.spec-hero__crumb a{opacity:.9;}
+.spec-hero__crumb a:hover{text-decoration:underline;}
+
+.spec-hero__top{position:relative;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+.spec-hero__icon{
+  width:60px;height:60px;border-radius:16px;
+  background:#fff;color:var(--navy);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;flex-shrink:0;
+}
+.spec-hero__title h1{margin:0 0 4px;font-size:1.7rem;font-weight:700;}
+.spec-hero__title p{margin:0;font-size:.9rem;opacity:.85;}
+
+.spec-hero__stats{
+  position:relative;
+  display:flex;gap:14px;
+  margin-top:28px;
+  flex-wrap:wrap;
+}
+.spec-hero__stat{
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.3);
+  border-radius:14px;
+  padding:10px 18px;
+  min-width:120px;
+}
+.spec-hero__stat b{display:block;font-size:1.15rem;font-weight:800;}
+.spec-hero__stat span{font-size:.75rem;opacity:.85;}
+
+/* ---------- قسم عام (يستخدم لكل الأقسام تحت) ---------- */
+.spec-section{
+  max-width:1100px;
+  margin:0 auto;
+  padding:44px 24px 8px;
+}
+.spec-section h2{
+  margin:0 0 22px;
+  font-size:1.25rem;
+  color:var(--navy);
+  font-weight:700;
+}
+
+/* ---------- 3 بطاقات المعلومات السريعة ---------- */
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:18px;
+  margin-bottom:12px;
+}
+.info-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:20px;
+  transition:.2s;
+}
+.info-card:hover{box-shadow:var(--shadow);transform:translateY(-2px);}
+.info-card__icon{
+  width:40px;height:40px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.1rem;margin-bottom:12px;
+}
+.info-card--goals .info-card__icon{background:#EAF1FF;}
+.info-card--jobs .info-card__icon{background:#E7F7F1;}
+.info-card--reqs .info-card__icon{background:#FCEFDC;}
+.info-card h3{margin:0 0 8px;font-size:.95rem;color:var(--dark);font-weight:700;}
+.info-card p{margin:0;font-size:.85rem;color:var(--gray);line-height:1.7;}
+
+/* ---------- قسم المهارات الأساسية ---------- */
+.skills-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:16px;
+}
+.skill-card{
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:16px;
+  padding:16px;
+  transition:.2s;
+}
+.skill-card:hover{border-color:var(--blue);box-shadow:var(--shadow);}
+.skill-card__icon{
+  width:38px;height:38px;border-radius:11px;
+  background:var(--light);
+  display:flex;align-items:center;justify-content:center;
+  font-size:1rem;margin-bottom:10px;
+}
+.skill-card h3{margin:0 0 6px;font-size:.88rem;color:var(--navy);font-weight:700;}
+.skill-card p{margin:0;font-size:.78rem;color:var(--gray);line-height:1.6;}
+
+/* ---------- دعوة لإجراء ---------- */
+.spec-cta{
+  max-width:1100px;
+  margin:36px auto 60px;
+  padding:0 24px;
+}
+.spec-cta__box{
+  background:var(--light);
+  border:1px dashed var(--border);
+  border-radius:var(--radius);
+  padding:24px;
+  display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.spec-cta__box p{margin:0;font-size:.9rem;color:var(--dark);font-weight:600;}
+
+/* ---------- استجابة الموبايل ---------- */
+@media (max-width:600px){
+  .spec-hero{padding:32px 18px 32px;}
+  .spec-hero__title h1{font-size:1.4rem;}
+  .spec-section{padding:32px 18px 6px;}
+}
