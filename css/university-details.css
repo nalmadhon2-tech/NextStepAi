@@ -133,7 +133,7 @@ nav.main-nav a:hover{color:var(--blue);}
   display:inline-flex;align-items:center;gap:8px;
   padding:13px 26px;border-radius:12px;
   background:var(--mint);color:#fff;font-weight:700;font-size:13.5px;
-  box-shadow:0 10px 22px rgba(31,163,122,0.28);transition:transform .2s ease;
+  box-shadow:0 10px 22px rgba(72,230,176,0.28);transition:transform .2s ease;
 }
 .btn-check-match:hover{transform:translateY(-2px);}
 .btn-contact-uni{
