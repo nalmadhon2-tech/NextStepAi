@@ -54,7 +54,7 @@ nav.main-nav a:hover{color:var(--blue);}
   transition: color 0.25s ease;
   transition: border-color .2s ease, color .2s ease;
 }
-}
+
 
 .search-box svg{width:16px;height:16px;color:var(--gray);flex-shrink:0;}
 .search-box input{
@@ -93,7 +93,7 @@ nav.main-nav a:hover{color:var(--blue);}
   border:1.5px solid var(--navy);
   color:var(--navy);
   font-weight:700;
-  font-size:13.5px;
+  font-size:16px;
   transition:background .2s ease, color .2s ease;
 }
 .btn-signin:hover{background:var(--navy);color:#fff;}
