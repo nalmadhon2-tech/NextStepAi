@@ -71,7 +71,7 @@ section.hero{
   align-items:center;
   overflow:hidden;
   isolation:isolate;
-  min-height:460px;
+  min-height:600px;
 }
 .hero-bg{
   position:absolute;
@@ -155,6 +155,7 @@ section.hero::before{
 .features-section{
   background:#fff;
   flex-shrink:0;
+   height: 130px;
 }
 .features-row{
   max-width:1240px;

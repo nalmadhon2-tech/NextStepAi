@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>الملف الشخصي — NextStep AI</title>
+<title>علوم الحاسوب — NextStep AI</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="../css/app.css" rel="stylesheet">
 <link href="../css/header.css" rel="stylesheet">
-<link href="../css/profile.css" rel="stylesheet">
+<link href="../css/specialization-detail.css" rel="stylesheet">
 <link href="../css/footer.css" rel="stylesheet">
 </head>
 <body>
@@ -45,117 +45,106 @@
   </div>
 </header>
 
-<!-- ======================= PROFILE ======================= -->
-<div class="profile-wrap">
-  <div class="profile-inner">
+<!-- ======================= BREADCRUMB ======================= -->
+<div class="spec-breadcrumb">
+  <a href="universities.html">الجامعات</a>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+  <a href="university-details.html">جامعة النجاح الوطنية</a>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+  <span class="current">علوم الحاسوب</span>
+</div>
 
-    <div class="profile-layout">
-
-      <!-- Sidebar -->
-      <div class="profile-side">
-        <div class="side-avatar">لم</div>
-        <div class="side-name">لمى محضون</div>
-        <div class="side-role">طالبة — علوم الحاسوب</div>
-
-        <nav class="side-menu">
-          <a href="results.html">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 9 9"/></svg>
-            نسبة التوافق
-          </a>
-          <a href="study-plan.html">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg>
-            الخطة الدراسية
-          </a>
-          <a href="profile.html" class="active">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg>
-            الملف الشخصي
-          </a>
-          <a href="#">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
-            الإشعارات
-          </a>
-          <a href="#">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-            الإعدادات
-          </a>
-          <a href="#">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 12h6M9 16h6M9 8h1"/></svg>
-            السيرة الذاتية
-          </a>
-
-          <div class="menu-divider"></div>
-
-          <button class="logout-btn" id="btnLogout" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="M16 17l5-5-5-5M21 12H9"/></svg>
-            تسجيل الخروج
-          </button>
-        </nav>
+<!-- ======================= HERO ======================= -->
+<div class="spec-hero">
+  <div class="spec-hero-box">
+    <div class="spec-hero-top">
+      <div class="spec-hero-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
       </div>
-
-      <!-- Main content -->
-      <div class="profile-main">
-
-        <div class="profile-card">
-          <div class="profile-card-head">
-            <div class="big-avatar">لم</div>
-            <div>
-              <h2>لمى محضون</h2>
-              <p>طالبة مسجّلة على NextStep AI منذ يوليو 2026</p>
-            </div>
-          </div>
-
-          <div class="info-grid">
-            <div class="info-item">
-              <div class="info-label">الجامعة</div>
-              <div class="info-value">جامعة النجاح الوطنية</div>
-            </div>
-            <div class="info-item">
-              <div class="info-label">السنة الدراسية</div>
-              <div class="info-value">السنة الثانية</div>
-            </div>
-            <div class="info-item">
-              <div class="info-label">التخصص</div>
-              <div class="info-value">علوم الحاسوب</div>
-            </div>
-          </div>
-
-          <div class="skills-label">المهارات</div>
-          <div class="skills-row">
-            <span class="skill-tag">حل المشكلات</span>
-            <span class="skill-tag">التفكير المنطقي</span>
-            <span class="skill-tag">البرمجة</span>
-            <span class="skill-tag">العمل الجماعي</span>
-            <span class="skill-tag">إدارة الوقت</span>
-          </div>
-        </div>
-
-        <div class="quick-stats">
-          <div class="qstat-card">
-            <div class="qstat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 9 9"/></svg></div>
-            <div>
-              <div class="qstat-value">94%</div>
-              <div class="qstat-label">نسبة التوافق مع التخصص</div>
-            </div>
-          </div>
-          <div class="qstat-card">
-            <div class="qstat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h6"/></svg></div>
-            <div>
-              <div class="qstat-value">45/140</div>
-              <div class="qstat-label">ساعة معتمدة مكتملة</div>
-            </div>
-          </div>
-          <div class="qstat-card">
-            <div class="qstat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10.5c.6.5 1 1.3 1 2.1V17h6v-1.4c0-.8.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg></div>
-            <div>
-              <div class="qstat-value">1</div>
-              <div class="qstat-label">اختبار مكتمل</div>
-            </div>
-          </div>
-        </div>
-
+      <div class="spec-hero-title">
+        <h1>علوم الحاسوب</h1>
+        <p>بكالوريوس · عمادة الهندسة وتكنولوجيا المعلومات</p>
       </div>
     </div>
 
+    <div class="spec-hero-stats">
+      <div class="spec-stat-box"><b>4 سنوات</b><span>مدة الدراسة</span></div>
+      <div class="spec-stat-box"><b>2,500$</b><span>متوسط الراتب الشهري المتوقع</span></div>
+      <div class="spec-stat-box highlight"><b>94%</b><span>نسبة توافقك مع التخصص</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= INFO CARDS ======================= -->
+<div class="spec-section">
+  <div class="info-grid">
+    <div class="info-card">
+      <div class="info-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.5" fill="currentColor"/></svg>
+      </div>
+      <h3>أهداف التخصص</h3>
+      <p>إعداد كوادر قادرة على تصميم وبرمجة الأنظمة الذكية، وتحليل المشكلات التقنية وحلّها بأساليب علمية حديثة.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 7h-3V5a2 2 0 0 0-2-2H9a2 2 0 0 0-2 2v2H4a1 1 0 0 0-1 1v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V8a1 1 0 0 0-1-1z"/><path d="M9 5h6v2H9z"/></svg>
+      </div>
+      <h3>فرص العمل بعد التخرج</h3>
+      <p>مطوّر برمجيات، مهندس بيانات، محلل أنظمة، أخصائي أمن سيبراني، أو ريادة مشروعك التقني الخاص.</p>
+    </div>
+    <div class="info-card">
+      <div class="info-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+      </div>
+      <h3>مؤهلات يجب أن تمتلكها</h3>
+      <p>تفكير منطقي وحل مشكلات، إجادة أساسيات الرياضيات، وصبر على التعلّم الذاتي المستمر.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= SKILLS ======================= -->
+<div class="spec-section">
+  <h2>المهارات والتعليم الأساسي</h2>
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+      </div>
+      <h3>البرمجة والتطوير</h3>
+      <p>تعلّم لغات مثل Python وJava وبناء تطبيقات ويب وموبايل متكاملة.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M9 3v18M3 9h6"/></svg>
+      </div>
+      <h3>تصميم الواجهات</h3>
+      <p>تصميم تجارب مستخدم سهلة وجذابة (UI/UX) للتطبيقات والمواقع.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+      </div>
+      <h3>قواعد البيانات</h3>
+      <p>تصميم وإدارة قواعد بيانات فعّالة وآمنة للأنظمة المختلفة.</p>
+    </div>
+    <div class="skill-card">
+      <div class="skill-card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/></svg>
+      </div>
+      <h3>أمن المعلومات</h3>
+      <p>أساسيات حماية الأنظمة والبيانات من الاختراق والتهديدات الرقمية.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ======================= CTA ======================= -->
+<div class="spec-cta">
+  <div class="spec-cta-box">
+    <p>مش متأكدة إذا هاد التخصص مناسب إلك؟ خدي استبيانك الذكي واعرفي نسبة توافقك بدقة.</p>
+    <a href="quiz.html" class="btn-start-quiz">
+      ابدأ الاختبار الذكي
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </div>
 
@@ -239,12 +228,6 @@
     </div>
   </div>
 </footer>
-
-<script>
-document.getElementById('btnLogout').addEventListener('click', () => {
-  window.location.href = '../index.html';
-});
-</script>
 
 </body>
 </html>
