@@ -5,16 +5,24 @@
    ===================================================================== */
 
 /* ======================= HEADER ======================= */
+header{
+  position: fixed; /* أو sticky */
+  top: 0;
+  right: 0;   /* لأن الموقع RTL */
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
 header.site-header{
   background:#fff;
   border-bottom:1px solid var(--border);
   flex-shrink:0;
+  height: 12%;
 }
 .start-btn {
 padding: 9px 22px;
   border-radius: 999px;
   color: var(--navy);
-  font-weight: 700;
   font-size: 16px;
     display: flex;
     align-items: center;
@@ -22,8 +30,6 @@ padding: 9px 22px;
     background-color: #0F9F8D; /* أخضر */
     color: #fff;
     border: none;
-    
-    
     font-size: 16px;
     font-weight: 700;
     cursor: pointer;
@@ -62,7 +68,14 @@ nav.main-nav ul{
   gap:60px;
   font-size:16px;
   font-weight:700;
-  color:var(--dark);
+  color:var(--navy);
+}
+.brand-mark .brand-text{
+   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.brand-mark .brand-text:hover {
+  transform: translateY(-8px);
+ 
 }
 nav.main-nav a{transition:color .2s ease;}
 nav.main-nav a:hover{color:var(--blue);}
@@ -101,7 +114,7 @@ section.hero{
   align-items:center;
   overflow:hidden;
   isolation:isolate;
-  min-height:600px;
+  min-height:720px;
 }
 .hero-bg{
   position:absolute;
@@ -141,19 +154,20 @@ section.hero::before{
 .hero-copy h1 span{color:var(--cyan);}
 .hero-copy h2{
   font-weight:700;
- font-size:  clamp(15px,4.2vh,42px);
-  font-weight: 800;
+ font-size:  clamp(15px,3.2vh,42px);
+ 
   color: #fff;
   margin-bottom: 12px;
-  margin-left:  66px;
+  margin-left:  82px;
 
 }
 .hero-copy p.lead{
-  font-size:clamp(15px,3.1vh,42px);;
+  font-size:clamp(15px,1.1vh,26px);
   line-height:1.8;
   color:#DCE4EF;
-  max-width:497px;
+  max-width:400px;
   margin-bottom:20px;
+  margin-left: 82px;
 }
 .hero-actions{display:flex;gap:14px;margin-bottom:0;flex-wrap:wrap;}
 .btn-primary{
@@ -188,7 +202,7 @@ section.hero::before{
 .features-section{
   background:#fff;
   flex-shrink:0;
-   height: 130px;
+   height: 110px;
 }
 .features-row{
   max-width:1240px;
